@@ -8,13 +8,16 @@ public class RoleCheckHandler extends Handler {
 
 	@Override
 	public boolean handle(String username, String password) {
-						
-        if ("admin".equals(username)) {
-        	Logger.log("Loading Admin Page...");
-        	return true;        	
-        }
-        
-        renderMenu(EmployeeDatabase.getInstance().getEmployeeDetails(username).getRole());
+		Role role;
+		Logger.debug("RoleCheckHandler:");
+		try {
+			role = EmployeeDatabase.getInstance().getEmployeeDetails(username).getRole();
+		}
+		catch (Exception e) {
+			Logger.error(e.getMessage());
+			return false;
+		}
+        renderMenu(role);
         return handleNext(username, password);
 	}
 	

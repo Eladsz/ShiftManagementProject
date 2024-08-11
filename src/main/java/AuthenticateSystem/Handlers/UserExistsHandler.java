@@ -12,7 +12,7 @@ public class UserExistsHandler extends Handler {
             Logger.error("Sign Up to our app now!");
             return false;
         }
-        
+        Logger.debug("username " + username + " found");
         return handleNext(username, password);
     }
 }

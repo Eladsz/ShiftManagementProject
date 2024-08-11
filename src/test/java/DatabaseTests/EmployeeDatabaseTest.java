@@ -27,22 +27,22 @@ public class EmployeeDatabaseTest {
 
     @Test
     void testAddEmployee() {
-        assertTrue(database.addEmployee(employee1));
+        assertTrue(database.addEmployee(employee1, "password"));
         assertEquals(employee1, database.getEmployeeDetails("johndoe"));
 
         // Adding the same employee again should return false
-        assertFalse(database.addEmployee(employee1));
+        assertFalse(database.addEmployee(employee1, "password"));
 
     }
 
     @Test
     void testAddEmployeeNull() {
-        assertFalse(database.addEmployee(null));
+        assertFalse(database.addEmployee(null, null));
     }
 
     @Test
     void testGetEmployeeDetails() {
-        database.addEmployee(employee1);
+        database.addEmployee(employee1, "password");
         assertEquals(employee1, database.getEmployeeDetails("johndoe"));
 
         // Non-existent employee should return null

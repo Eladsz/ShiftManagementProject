@@ -61,6 +61,10 @@ public class Shift {
 		return workers.add(employee);
 	}
 	
+	public boolean removeWorker(Employee employee) {
+		return workers.remove(employee);
+	}
+	
 	public List<Employee> getShiftWorkers(){
 		return workers.stream().toList();
 	}
@@ -69,7 +73,20 @@ public class Shift {
 		return checkInOutRecords.add(rec);
 	}
 	
+	public boolean removeCheckInOutRecord(CheckInOutRecord rec) {
+		return checkInOutRecords.remove(rec);
+	}
+	
 	public List<CheckInOutRecord> getShiftCheckInOutRecords(){
 		return checkInOutRecords;
+	}
+
+	@Override
+	public String toString() {
+		return
+				  "shift id:   " + shiftID
+				+ "shiftDate = " + shiftDate
+				+ "startTime = " + startTime
+				+ "endTime 	 = " + endTime;
 	}
 }

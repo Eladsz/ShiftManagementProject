@@ -7,7 +7,8 @@ public enum Role {
 	
 	WORKER 			(1, "Worker"),
 	SHIFT_MANAGER 	(2, "Shift Manager"),
-	MANAGER 		(3, "Manager");
+	MANAGER 		(3, "Manager"),
+	ADMIN           (4, "Admin");
 	
 	private int index;
 	private String name;

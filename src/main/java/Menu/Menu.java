@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import Commands.ExitCommand;
 import IO.Input;
 import Logger.Logger;
 import Interfaces.*;
@@ -15,18 +16,21 @@ public abstract class Menu implements MenuInterface, Command{
 	private Map<String, Command> options;
 	private List<String> optionsNames;
 	private String menuName;
+	private String exitMessage;
 	protected boolean keep = true;
 	
 	public Menu(String name) {
 		setMenuName(name);
 		options = new LinkedHashMap<String, Command>();
 		optionsNames = new ArrayList<String>();	
+		addExitOption("Exit");
 	}
 	
 	public Menu(String name, String returnOption) {
 		setMenuName(name);
 		options = new HashMap<String, Command>();
 		optionsNames = new ArrayList<String>();
+		addExitOption(returnOption);
 	}
 	
 	@Override
@@ -43,7 +47,11 @@ public abstract class Menu implements MenuInterface, Command{
 	
 	@Override
 	public void exit() {
-		Logger.log("Exiting " + menuName + "...");
+		if (exitMessage == null)
+			Logger.log("Exiting " + menuName + "...");
+		else
+			Logger.log(exitMessage);
+		
 		return;
 	}
 	
@@ -65,8 +73,10 @@ public abstract class Menu implements MenuInterface, Command{
 				Logger.error("Please try again");
 			}
 			
-			if (index == 0)
+			if (index == 0) {
+				exit();
 				break;
+			}
 			else 
 				AfterAction();
 			
@@ -108,6 +118,17 @@ public abstract class Menu implements MenuInterface, Command{
 	public Map<String, Command> getOptions() {
 		return options;
 	}
+	
+	public void SetExitMessage(String msg) {
+		this.exitMessage = msg;
+	}
+	
+	private void addExitOption(String exitOptionName) {
+		optionsNames.add(exitOptionName);
+		getOptions().put(exitOptionName, new ExitCommand());
+	}
+	
+
 	
 	
 	

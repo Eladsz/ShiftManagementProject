@@ -9,6 +9,7 @@ public class ValidPasswordHandler extends Handler {
             Logger.error("Wrong Password!");
             return false;
         }
+        Logger.debug("password is correct");
         return handleNext(username, password);
     }
 }

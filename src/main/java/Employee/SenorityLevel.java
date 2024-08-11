@@ -28,8 +28,8 @@ public enum SenorityLevel {
 	}
 	
 	public static SenorityLevel chooseSenorityLevel() {
-		Output.printRoles();
-		int choice = Input.getNumberInRange(1, SenorityLevel.values().length, "Choose Role by number");
+		Output.printSenorityLevels();
+		int choice = Input.getNumberInRange(1, SenorityLevel.values().length, "Choose Senority level by number");
 		for (SenorityLevel level : SenorityLevel.values()) {
 			if (level.getIndex() == choice)
 				return level;

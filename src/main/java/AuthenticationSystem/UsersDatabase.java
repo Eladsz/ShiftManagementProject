@@ -25,7 +25,7 @@ public class UsersDatabase {
     }
 
     public boolean isValidPassword(String username, String password) {
-    	return users.containsKey(username) && users.get(username).equals(password);
+    	return users.get(username).equals(password);
     }
     
     public boolean addUser(String username, String password) {
@@ -35,4 +35,18 @@ public class UsersDatabase {
         users.put(username, password);
         return true; // User added successfully
     }
+    
+    public String getPassword(String username){
+    	if(users.containsKey(username))
+    		return users.get(username);
+    	return null;
+    }
+    
+    public boolean setPassword(String username, String oldPassword ,String newPassword) {
+    	if (users.containsKey(username)) {
+    		return users.replace(username, oldPassword, newPassword);
+    	}
+    	return false;
+    }
+    
 }

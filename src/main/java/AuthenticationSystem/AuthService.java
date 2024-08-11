@@ -14,10 +14,13 @@ public class AuthService {
     private static AuthService _instance;
     
     private AuthService() {
-        this.handler = 			new UserExistsHandler()
-        		.setNextHandler(new ValidPasswordHandler())
-        		.setNextHandler(new EmployeeExistsHandler())
-        		.setNextHandler(new RoleCheckHandler());
+    	this.handler 						 = new UserExistsHandler();
+    	ValidPasswordHandler passwordHandler = new ValidPasswordHandler();
+    	RoleCheckHandler roleChecker 		 = new RoleCheckHandler();
+    	
+    	roleChecker.setNextHandler(new EmployeeExistsHandler());
+    	passwordHandler.setNextHandler(roleChecker);
+    	handler.setNextHandler(passwordHandler);
     }
     
     public static AuthService getInstance() {
@@ -27,9 +30,9 @@ public class AuthService {
     	return _instance;
     }
 
-    public boolean logIn(String email, String password) {
-        if (handler.handle(email, password)) {
-            Logger.log("Authorization was successful!");
+    public boolean logIn(String username, String password) {
+        if (handler.handle(username, password)) {
+            Logger.log("Authorization was successful");
             return true;
         }
         return false;
@@ -38,7 +41,7 @@ public class AuthService {
     public boolean registerEmployee(Employee employee, String password) {
     	
     	if (UsersDatabase.getInstance().addUser(employee.getUsername(), password)) 
-    		return EmployeeDatabase.getInstance().addEmployee(employee);	
+    		return EmployeeDatabase.getInstance().addEmployee(employee, password);	
     	
     	return false;
     }

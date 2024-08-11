@@ -1,6 +1,7 @@
 package IO;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
@@ -172,17 +173,17 @@ public class Input {
         return birthdate;
     }
     
-    public static LocalDate getDate() {
+    public static LocalDate getDate(String dateDescription) {
         LocalDate date = null;
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         boolean rep;
         do {
             rep = false;
-            Logger.log("Enter the shift's date (dd-MM-yyyy): ");
+            Logger.log("Enter "+ dateDescription + " (dd-MM-yyyy): ");
             String input = ScannerProvider.getScanner().nextLine();
             try {
                 date = LocalDate.parse(input, formatter);
-                if (date.getYear() < LocalDate.now().getYear())
+                if (date.getYear() > LocalDate.now().getYear())
                 {
                 	Logger.error(" Invalid date. Please Try Again:\n");
                 	rep = true;
@@ -222,8 +223,29 @@ public class Input {
 	
     
     public static String getString(String prompt) {
-        Logger.log(prompt);
+        Logger.log("Please enter " + prompt + ":");
         return ScannerProvider.getScanner().nextLine();
+    }
+    
+    public static LocalTime getTime(String timeDescription) {
+        LocalTime time = null;
+        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        boolean rep;
+        do {
+            rep = false;
+            Logger.log("Enter " + timeDescription + " (HH:mm): ");
+            String input = ScannerProvider.getScanner().nextLine();
+            try {
+                time = LocalTime.parse(input, formatter);
+            } catch (DateTimeParseException ex) {
+                rep = true;
+                Logger.error(" The input must be a valid time in the format HH:mm. Please Try Again:\n ");
+            } catch (Exception ex) {
+                Logger.log(ex.getMessage());
+            }
+            
+        } while (rep);
+        return time;
     }
     
 

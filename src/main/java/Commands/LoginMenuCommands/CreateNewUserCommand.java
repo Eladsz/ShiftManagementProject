@@ -1,4 +1,4 @@
-package Commands;
+package Commands.LoginMenuCommands;
 
 import java.time.LocalDate;
 
@@ -15,18 +15,21 @@ public class CreateNewUserCommand implements Command {
 	@Override
 	public void execute() {
 		boolean userCreated = false;
-		int id = Input.getIDFromUser();
-		String firstName = Input.getName("First name");
-		String lastName = Input.getName("Last name");
-		LocalDate birthdate = Input.getDate();
-		Role role = Role.chooseRole();
-		SenorityLevel level = SenorityLevel.chooseSenorityLevel();
+
 		while (!userCreated) {
+			int id = Input.getIDFromUser();
+			String firstName = Input.getName("First name");
+			String lastName = Input.getName("Last name");
+			LocalDate birthdate = Input.getPastDate("Birthdate");
+			Role role = Role.chooseRole();
+			SenorityLevel level = SenorityLevel.chooseSenorityLevel();
 			String username = Input.getString("Username");
-			if(EmployeeDatabase.getInstance().addEmployee(new Employee(id, firstName, lastName, birthdate, role, level, username))) {
+			String password = Input.getString("Password");
+			if(EmployeeDatabase.getInstance().addEmployee(new Employee(id, firstName, lastName, birthdate, role, level, username), password)) {
 				Logger.log("Employee: ");
 				Logger.log(EmployeeDatabase.getInstance().getEmployeeDetails(username).toString());
 				Logger.log("has been created successfully");
+				userCreated = true;
 				
 			}
 			else {
