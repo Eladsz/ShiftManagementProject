@@ -12,7 +12,7 @@ public interface ShiftManagement {
 	public void removeShift(int shiftID);
 	public List<Employee> getShiftsWorkers(int shiftID);
 	public List<CheckInOutRecord> getShiftRecords(int shiftID);
-	public LocalDate getShiftsDate(int shiftNumber);
+	public LocalDate getShiftsDate(int shiftID);
 	public LocalTime getShiftsStartTime(int shiftID);
 	public LocalTime getShiftsEndTime(int shiftID);
 	public boolean addWorkerToShift(int shiftID, Employee employee);

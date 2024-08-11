@@ -14,10 +14,6 @@ public class ShiftManager implements ShiftManagement {
 	@Override
 	public void addNewShift(LocalDate shiftDate, LocalTime startTime,LocalTime endTime) {
 		
-//			LocalDate shiftDate = Input.getDate("Shift date");
-//			LocalTime startTime = Input.getTime("Shift Start time");
-//			LocalTime endTime 	= Input.getTime("Shift End time");
-			
 			Shift newShift;
 			
 			try {

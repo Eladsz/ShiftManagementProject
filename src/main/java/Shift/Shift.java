@@ -84,9 +84,9 @@ public class Shift {
 	@Override
 	public String toString() {
 		return
-				  "shift id:   " + shiftID
-				+ "shiftDate = " + shiftDate
-				+ "startTime = " + startTime
-				+ "endTime 	 = " + endTime;
+				  "shift id:   " + shiftID + "\n"
+				+ "shiftDate = " + shiftDate+ "\n"
+				+ "startTime = " + startTime+ "\n"
+				+ "endTime 	 = " + endTime+ "\n";
 	}
 }
