@@ -49,4 +49,25 @@ public class UsersDatabase {
     	return false;
     }
     
+    
+    public boolean updateUsername(String oldUsername, String newUsername) {
+        if (oldUsername == null || newUsername == null || oldUsername.trim().isEmpty() || newUsername.trim().isEmpty()) {
+            return false; // Invalid input
+        }
+
+        if (users.containsKey(newUsername)) {
+            return false; // New username already exists
+        }
+
+        String password = users.remove(oldUsername);
+        if (password == null) {
+            return false; // Old username not found
+        }
+
+        users.put(newUsername, password);
+        return true; // Username successfully updated
+    }
+
+
+    
 }

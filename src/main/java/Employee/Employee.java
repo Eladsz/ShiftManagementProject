@@ -21,7 +21,7 @@ public class Employee {
 		this.setBirthDate(birthDate); 
 		this.setRole(role);
 		this.setLevel(level);
-		this.setUsername(username);
+		this.username = username;
 		this.employeeID = EmployeeIDGenerator.getInstance().getID();
 	}
 	
@@ -82,7 +82,7 @@ public class Employee {
 	}
 
 	public void setUsername(String username) {
-		this.username = username;
+			this.username = username;
 	}
 	
 

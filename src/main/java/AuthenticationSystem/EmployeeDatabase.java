@@ -87,5 +87,34 @@ public class EmployeeDatabase implements EmployeeManagement {
 	public List<Employee> getAllEmployees() {
 		return employeeMap.values().stream().toList();
 	}
-    
+	
+	@Override
+	public boolean changeUsername(Employee employee, String newUsername) {
+		
+	    if (employee == null || newUsername == null || newUsername.trim().isEmpty()) {
+	        return false; // Invalid employee or new username
+	    }
+
+	    if (employeeMap.containsKey(newUsername)) {
+	        return false; // New username is already taken
+	    }
+
+	    // Remove the old entry and add the new one
+	    String oldUsername = employee.getUsername();
+	    employeeMap.remove(oldUsername);
+	    employee.setUsername(newUsername); // Assuming Employee class has a setUsername method
+	    employeeMap.put(newUsername, employee);
+
+	    // Update username in UsersDatabase as well if applicable
+	    if (UsersDatabase.getInstance().updateUsername(oldUsername, newUsername)) {
+	        return true; // Successfully updated username
+	    } else {
+	        // Rollback in case of failure to update UsersDatabase
+	        employeeMap.remove(newUsername);
+	        employeeMap.put(oldUsername, employee);
+	        return false;
+	    }
+	}
+
+	
 }

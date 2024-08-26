@@ -12,5 +12,6 @@ public interface EmployeeManagement {
 	public boolean changePassword(Employee employee ,String oldPassword, String newPassword);
 	public Employee findEmployee(int employeeID);
 	public List<Employee> getAllEmployees();
+	boolean changeUsername(Employee employee, String newUsername);
 	
 }
