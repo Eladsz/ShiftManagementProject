@@ -1,0 +1,142 @@
+2024-08-26T20:50:49.664956800 [INFO] Logger has been initialized.
+2024-08-26T20:50:49.673896700 [INFO] Shifts has been generated and added to the database.
+2024-08-26T20:50:49.680873200 [INFO] Admin user has been created [username: admin, password: admin]
+2024-08-26T20:50:49.681869400 [INFO] Workers has been generated and automatically assigned to shifts.
+2024-08-26T20:50:49.687850 [INFO] 
+
+
+*********************************
+2024-08-26T20:50:49.687850 [INFO] Log-in Menu
+2024-08-26T20:50:49.690839200 [INFO] 0. Exit
+2024-08-26T20:50:49.691837800 [INFO] 1. Log-In
+2024-08-26T20:50:49.691837800 [INFO] 2. Forgot my passowrd
+2024-08-26T20:50:49.691837800 [INFO] *********************************
+2024-08-26T20:50:49.692832700 [INFO] Please choose an option:
+2024-08-26T20:52:35.576702100 [INFO] Please enter Username:
+2024-08-26T20:52:37.271112400 [INFO] Please enter Password:
+2024-08-26T20:52:38.040730900 [DEBUG] username admin found
+2024-08-26T20:52:38.041684700 [DEBUG] password is correct
+2024-08-26T20:52:38.042681 [DEBUG] RoleCheckHandler:
+2024-08-26T20:52:38.044674800 [INFO] Loading Admin Page...
+2024-08-26T20:52:38.045670100 [DEBUG] EmployeeExistsHandler: 
+2024-08-26T20:52:38.045670100 [INFO] Authorization was successful
+2024-08-26T20:52:38.049658500 [INFO] Hello admin you are logged in!
+2024-08-26T20:52:38.057659100 [INFO] 
+
+
+*********************************
+2024-08-26T20:52:38.058661 [INFO] Admin Menu
+2024-08-26T20:52:38.058661 [INFO] 0. Log-Out
+2024-08-26T20:52:38.059623 [INFO] 1. Check-in
+2024-08-26T20:52:38.059623 [INFO] 2. Check-out
+2024-08-26T20:52:38.059623 [INFO] 3. Print my shifts
+2024-08-26T20:52:38.060659200 [INFO] 4. Print worker's shifts
+2024-08-26T20:52:38.060659200 [INFO] 5. Update shift
+2024-08-26T20:52:38.060659200 [INFO] 6. Find shift by ID
+2024-08-26T20:52:38.061617 [INFO] 7. Assign worker to shift 
+2024-08-26T20:52:38.061617 [INFO] 8. Find Employee by ID
+2024-08-26T20:52:38.062644100 [INFO] 9. Print all employees
+2024-08-26T20:52:38.062644100 [INFO] 10. Create new worker account
+2024-08-26T20:52:38.062644100 [INFO] 11. Remove worker
+2024-08-26T20:52:38.063609800 [INFO] 12. Add New Shift
+2024-08-26T20:52:38.063609800 [INFO] 13. Remove Shift
+2024-08-26T20:52:38.064608600 [INFO] *********************************
+2024-08-26T20:52:38.065605300 [INFO] Please choose an option:
+2024-08-26T20:52:42.769142 [INFO] 1. By Day
+2024-08-26T20:52:42.769142 [INFO] 2. By Week
+2024-08-26T20:52:42.770140900 [INFO] 3. By Month
+2024-08-26T20:52:42.770140900 [INFO] Choose an option: 
+2024-08-26T20:52:45.624426600 [INFO] Enter the month number: 
+2024-08-26T20:52:51.179915800 [INFO] Shifts on month 8 for employee ID = 0:
+2024-08-26T20:52:51.186920400 [INFO] 
+
+
+*********************************
+2024-08-26T20:52:51.187892600 [INFO] Admin Menu
+2024-08-26T20:52:51.187892600 [INFO] 0. Log-Out
+2024-08-26T20:52:51.187892600 [INFO] 1. Check-in
+2024-08-26T20:52:51.188886300 [INFO] 2. Check-out
+2024-08-26T20:52:51.188886300 [INFO] 3. Print my shifts
+2024-08-26T20:52:51.188886300 [INFO] 4. Print worker's shifts
+2024-08-26T20:52:51.189886300 [INFO] 5. Update shift
+2024-08-26T20:52:51.189886300 [INFO] 6. Find shift by ID
+2024-08-26T20:52:51.189886300 [INFO] 7. Assign worker to shift 
+2024-08-26T20:52:51.189886300 [INFO] 8. Find Employee by ID
+2024-08-26T20:52:51.190898200 [INFO] 9. Print all employees
+2024-08-26T20:52:51.190898200 [INFO] 10. Create new worker account
+2024-08-26T20:52:51.190898200 [INFO] 11. Remove worker
+2024-08-26T20:52:51.190898200 [INFO] 12. Add New Shift
+2024-08-26T20:52:51.190898200 [INFO] 13. Remove Shift
+2024-08-26T20:52:51.190898200 [INFO] *********************************
+2024-08-26T20:52:51.191876300 [INFO] Please choose an option:
+2024-08-26T20:53:07.257776600 [INFO] 1. ID: 869427601, Name: Alex Doe, Username: alex.doe10, birthdate: 1993-10-10, Role: Manager Shift Manager
+2024-08-26T20:53:07.257776600 [INFO] 2. ID: 630761464, Name: Jane Davis, Username: jane.davis96, birthdate: 1997-05-16, Role: Senior Worker
+2024-08-26T20:53:07.258746800 [INFO] 3. ID: 977371522, Name: Alex Doe, Username: alex.doe31, birthdate: 1984-01-08, Role: Senior Worker
+2024-08-26T20:53:07.258746800 [INFO] 4. ID: 315735187, Name: John Brown, Username: john.brown51, birthdate: 1980-10-08, Role: Student Shift Manager
+2024-08-26T20:53:07.259744200 [INFO] 5. ID: 275888610, Name: Alex Doe, Username: alex.doe79, birthdate: 1986-03-24, Role: Senior Shift Manager
+2024-08-26T20:53:07.259744200 [INFO] 6. ID: 721995921, Name: Katie Davis, Username: katie.davis60, birthdate: 1983-07-04, Role: Junior Worker
+2024-08-26T20:53:07.260742300 [INFO] 7. ID: 466360279, Name: Jane Smith, Username: jane.smith65, birthdate: 1983-08-01, Role: Junior Worker
+2024-08-26T20:53:07.260742300 [INFO] 8. ID: 294959321, Name: John Johnson, Username: john.johnson75, birthdate: 1982-07-24, Role: Senior Shift Manager
+2024-08-26T20:53:07.260742300 [INFO] 9. ID: 419563368, Name: John Williams, Username: john.williams85, birthdate: 1996-04-20, Role: Student Shift Manager
+2024-08-26T20:53:07.261737900 [INFO] 10. ID: 0, Name: admin admin, Username: admin, birthdate: 2024-08-26, Role: Expert Admin
+2024-08-26T20:53:07.261737900 [INFO] 11. ID: 252888768, Name: Jane Davis, Username: jane.davis17, birthdate: 1988-12-06, Role: Manager Shift Manager
+2024-08-26T20:53:07.262734500 [INFO] 12. ID: 987621204, Name: Alex Davis, Username: alex.davis28, birthdate: 1987-08-05, Role: Student Worker
+2024-08-26T20:53:07.262734500 [INFO] 13. ID: 483071462, Name: Katie Williams, Username: katie.williams94, birthdate: 1994-06-10, Role: Junior Manager
+2024-08-26T20:53:07.263730600 [INFO] 14. ID: 153779232, Name: Emily Davis, Username: emily.davis77, birthdate: 1992-08-19, Role: Senior Manager
+2024-08-26T20:53:07.263730600 [INFO] 15. ID: 237593985, Name: Katie Brown, Username: katie.brown30, birthdate: 1993-07-10, Role: Manager Manager
+2024-08-26T20:53:07.264727500 [INFO] 16. ID: 536448921, Name: Emily Brown, Username: emily.brown63, birthdate: 1993-04-05, Role: Expert Worker
+2024-08-26T20:53:07.264727500 [INFO] 
+
+
+*********************************
+2024-08-26T20:53:07.265724 [INFO] Admin Menu
+2024-08-26T20:53:07.265724 [INFO] 0. Log-Out
+2024-08-26T20:53:07.266749 [INFO] 1. Check-in
+2024-08-26T20:53:07.266749 [INFO] 2. Check-out
+2024-08-26T20:53:07.267717100 [INFO] 3. Print my shifts
+2024-08-26T20:53:07.267717100 [INFO] 4. Print worker's shifts
+2024-08-26T20:53:07.268715100 [INFO] 5. Update shift
+2024-08-26T20:53:07.268715100 [INFO] 6. Find shift by ID
+2024-08-26T20:53:07.268715100 [INFO] 7. Assign worker to shift 
+2024-08-26T20:53:07.268715100 [INFO] 8. Find Employee by ID
+2024-08-26T20:53:07.269710500 [INFO] 9. Print all employees
+2024-08-26T20:53:07.269710500 [INFO] 10. Create new worker account
+2024-08-26T20:53:07.269710500 [INFO] 11. Remove worker
+2024-08-26T20:53:07.269710500 [INFO] 12. Add New Shift
+2024-08-26T20:53:07.269710500 [INFO] 13. Remove Shift
+2024-08-26T20:53:07.269710500 [INFO] *********************************
+2024-08-26T20:53:07.270727 [INFO] Please choose an option:
+2024-08-26T20:53:13.887397500 [INFO] 1. By Day
+2024-08-26T20:53:13.888451700 [INFO] 2. By Week
+2024-08-26T20:53:13.888451700 [INFO] 3. By Month
+2024-08-26T20:53:13.889391200 [INFO] Enter the employee ID (a 9-digit number): 
+2024-08-26T20:53:23.669272 [INFO] Choose an option: 
+2024-08-26T20:53:36.058379300 [INFO] Enter the month number: 
+2024-08-26T20:53:38.678872800 [INFO] Shifts on month 8 for employee ID = 536448921:
+2024-08-26T20:53:38.684852500 [INFO] shift id = 3
+shiftDate = 2024-08-26
+startTime = 17:00
+endTime = 21:00
+
+
+2024-08-26T20:53:38.684852500 [INFO] 
+
+
+*********************************
+2024-08-26T20:53:38.685892500 [INFO] Admin Menu
+2024-08-26T20:53:38.685892500 [INFO] 0. Log-Out
+2024-08-26T20:53:38.685892500 [INFO] 1. Check-in
+2024-08-26T20:53:38.686882900 [INFO] 2. Check-out
+2024-08-26T20:53:38.686882900 [INFO] 3. Print my shifts
+2024-08-26T20:53:38.686882900 [INFO] 4. Print worker's shifts
+2024-08-26T20:53:38.686882900 [INFO] 5. Update shift
+2024-08-26T20:53:38.686882900 [INFO] 6. Find shift by ID
+2024-08-26T20:53:38.687851200 [INFO] 7. Assign worker to shift 
+2024-08-26T20:53:38.687851200 [INFO] 8. Find Employee by ID
+2024-08-26T20:53:38.687851200 [INFO] 9. Print all employees
+2024-08-26T20:53:38.687851200 [INFO] 10. Create new worker account
+2024-08-26T20:53:38.687851200 [INFO] 11. Remove worker
+2024-08-26T20:53:38.687851200 [INFO] 12. Add New Shift
+2024-08-26T20:53:38.688839500 [INFO] 13. Remove Shift
+2024-08-26T20:53:38.688839500 [INFO] *********************************
+2024-08-26T20:53:38.688839500 [INFO] Please choose an option:

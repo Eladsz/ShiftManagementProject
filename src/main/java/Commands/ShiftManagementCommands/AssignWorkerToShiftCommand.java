@@ -6,7 +6,7 @@ import Interfaces.Command;
 import Logger.Logger;
 import Shift.ShiftsDatabase;
 
-public class AddWorkerToShiftCommand implements Command{
+public class AssignWorkerToShiftCommand implements Command{
 
 	@Override
 	public void execute() {
@@ -29,11 +29,11 @@ public class AddWorkerToShiftCommand implements Command{
 		if(ShiftsDatabase.getInstance().findShiftByID(shiftID).addWorker(EmployeeDatabase.getInstance().findEmployee(workerID))) {
 			
 			Logger.log("Worker: \n" + EmployeeDatabase.getInstance().findEmployee(workerID).toString() + "\n"
-					+ " Has been added to shift:\n"
+					+ " Has been assigned to shift:\n"
 					+ ShiftsDatabase.getInstance().findShiftByID(shiftID).toString() + "\n");
 		}
 		else
-			Logger.error("Add worker " + workerID + " to the shift " + shiftID + " - Failed");
+			Logger.error("Assign worker " + workerID + " to the shift " + shiftID + " - Failed");
 			
 	}
 

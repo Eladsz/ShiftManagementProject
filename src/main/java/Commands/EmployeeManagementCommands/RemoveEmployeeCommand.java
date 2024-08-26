@@ -10,8 +10,7 @@ public class RemoveEmployeeCommand implements Command {
 
 	@Override
 	public void execute() {
-		Logger.log("Enter the employee ID");
-		int id = Input.getIDFromUser();
+		int id = Input.getIDFromUser("Enter the employee ID");
 		Employee worker = EmployeeDatabase.getInstance().findEmployee(id);
 		if (worker != null) {
 			if(EmployeeDatabase.getInstance().removeEmployee(worker))

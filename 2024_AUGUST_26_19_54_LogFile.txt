@@ -1,0 +1,42 @@
+2024-08-26T19:54:04.707681500 [INFO] Logger has been initialized.
+2024-08-26T19:54:04.715655500 [INFO] Shifts has been generated and added to the database.
+2024-08-26T19:54:04.723628700 [INFO] Admin user has been created [username: admin, password: admin]
+2024-08-26T19:54:04.724626100 [INFO] Workers has been generated and automatically assigned to shifts.
+2024-08-26T19:54:04.731604200 [INFO] 
+
+
+*********************************
+2024-08-26T19:54:04.731604200 [INFO] Log-in Menu
+2024-08-26T19:54:04.735590200 [INFO] 0. Exit
+2024-08-26T19:54:04.736587900 [INFO] 1. Log-In
+2024-08-26T19:54:04.737583700 [INFO] 2. Forgot my passowrd
+2024-08-26T19:54:04.737583700 [INFO] *********************************
+2024-08-26T19:54:04.737583700 [INFO] Please choose an option:
+2024-08-26T19:54:12.744774600 [INFO] Please enter Username:
+2024-08-26T19:54:14.681223200 [INFO] Please enter Password:
+2024-08-26T19:54:15.669861800 [DEBUG] username admin found
+2024-08-26T19:54:15.670892200 [DEBUG] password is correct
+2024-08-26T19:54:15.670892200 [DEBUG] RoleCheckHandler:
+2024-08-26T19:54:15.671854600 [INFO] Loading Admin Page...
+2024-08-26T19:54:15.671854600 [DEBUG] EmployeeExistsHandler: 
+2024-08-26T19:54:15.671854600 [INFO] Authorization was successful
+2024-08-26T19:54:15.672851600 [INFO] Hello admin you are logged in!
+2024-08-26T19:54:15.679859 [INFO] 
+
+
+*********************************
+2024-08-26T19:54:15.679859 [INFO] Admin Menu
+2024-08-26T19:54:15.680824500 [INFO] 0. Log-Out
+2024-08-26T19:54:15.681822 [INFO] 1. Check-in
+2024-08-26T19:54:15.681822 [INFO] 2. Check-out
+2024-08-26T19:54:15.681822 [INFO] 3. Print shifts
+2024-08-26T19:54:15.682818500 [INFO] 4. Update shift
+2024-08-26T19:54:15.682818500 [INFO] 5. Find shift by ID
+2024-08-26T19:54:15.683815 [INFO] 6. Add worker to shift 
+2024-08-26T19:54:15.683815 [INFO] 7. Find Employee by ID
+2024-08-26T19:54:15.683815 [INFO] 8. Print all employees
+2024-08-26T19:54:15.684811700 [INFO] 9. Create new worker account
+2024-08-26T19:54:15.684811700 [INFO] 10. Add New Shift
+2024-08-26T19:54:15.685809400 [INFO] 11. Remove Shift
+2024-08-26T19:54:15.685809400 [INFO] *********************************
+2024-08-26T19:54:15.685809400 [INFO] Please choose an option:

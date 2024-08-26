@@ -19,7 +19,7 @@ public interface ShiftManagement {
 	public boolean removeWorkerFromShift(int shiftID, Employee employee);
 	public boolean addCheckInOutRecord(int shiftID, CheckInOutRecord rec);
 	public boolean removeCheckInOutRecord(int shiftID, CheckInOutRecord rec);
-	public void printShiftsByWeek(int week);
-	public void printShiftsByMonth(int month);
-	public void printShiftsByDay(LocalDate date);
+	public void printShiftsByWeek(int week,int employeeID);
+	public void printShiftsByMonth(int month,int employeeID);
+	public void printShiftsByDay(LocalDate date,int employeeID);
 }

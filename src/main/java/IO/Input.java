@@ -146,6 +146,35 @@ public class Input {
         return num;
     }
     
+    public static int getIDFromUser(String msg) {
+        int num = 0;
+        boolean rep;
+        do {
+            rep = false;
+            Logger.log(msg + " (a 9-digit number): ");
+            try {
+                num = ScannerProvider.getScanner().nextInt();
+                
+                // Check if the number has exactly 9 digits
+                if (String.valueOf(num).length() != 9) {
+                    rep = true;
+                    ScannerProvider.getScanner().nextLine(); // Clear the buffer
+                    Logger.error(" The number must have exactly 9 digits\nTry Again:\n");
+                }
+                
+            } catch (InputMismatchException ex) {
+                rep = true;
+                Logger.error(" The input must be an Integer\nTry Again:\n");
+                ScannerProvider.getScanner().nextLine(); // Clear the buffer
+            } catch (Exception ex) {
+                Logger.log(ex.getMessage());
+            }
+            
+        } while (rep);
+        ScannerProvider.getScanner().nextLine(); // Clear the buffer
+        return num;
+    }
+    
     public static LocalDate getPastDate(String description) {
         LocalDate birthdate = null;
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");

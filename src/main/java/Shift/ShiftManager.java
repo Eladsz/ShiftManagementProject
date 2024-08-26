@@ -3,7 +3,9 @@ package Shift;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import AuthenticationSystem.EmployeeDatabase;
 import Employee.Employee;
 import IO.Input;
 import Interfaces.ShiftManagement;
@@ -176,46 +178,54 @@ public class ShiftManager implements ShiftManagement {
 	}
 
 	@Override
-	public void printShiftsByWeek(int week) {
+	public void printShiftsByWeek(int week, int employeeID) {
 		List<Shift> shifts = ShiftsDatabase.getInstance().getShiftsByWeek(week);
 		if (shifts.isEmpty()) {
 			Logger.error("There is no shifts on week number " + week);
 			return;
 		}
 		
-		Logger.log("Shifts on week " + week + ":");
-		printShifts(shifts);
+		Logger.log("Shifts on week " + week + " for employee ID = " + employeeID +":");
+		printShifts(shifts, EmployeeDatabase.getInstance().findEmployee(employeeID));
 		
 	}
 
 	@Override
-	public void printShiftsByMonth(int month) {
+	public void printShiftsByMonth(int month,int employeeID) {
 		List<Shift> shifts = ShiftsDatabase.getInstance().getShiftsByMonth(month);
 		if (shifts.isEmpty()) {
 			Logger.error("There is no shifts on month number " + month);
 			return;
 		}
 		
-		Logger.log("Shifts on month " + month + ":");
-		printShifts(shifts);
+		Logger.log("Shifts on month " + month +" for employee ID = " + employeeID + ":");
+		printShifts(shifts,EmployeeDatabase.getInstance().findEmployee(employeeID));
 		
 	}
 
 	@Override
-	public void printShiftsByDay(LocalDate date) {
+	public void printShiftsByDay(LocalDate date, int employeeID) {
 		List<Shift> shifts = ShiftsDatabase.getInstance().getShiftsByDate(date);
 		if (shifts.isEmpty()) {
 			Logger.error("There is no shifts on date " + date);
 			return;
 		}
 		
-		Logger.log("Shifts on date " + date + ":");
-		printShifts(shifts);
+		Logger.log("Shifts on date " + date +" for employee ID = " + employeeID + ":");
+		printShifts(shifts, EmployeeDatabase.getInstance().findEmployee(employeeID));
 		
 	}
 	
-	private void printShifts(List<Shift> shifts) {
-		for (Shift shift : shifts) {
+	private void printShifts(List<Shift> shifts, Employee employee) {
+		if (employee == null) {
+			Logger.error("Employee is not found");
+			return;
+		}
+		shifts = shifts.stream().filter(s -> s.getShiftWorkers().contains(employee)).collect(Collectors.toList());
+		if (shifts.isEmpty())
+			Logger.log("There are no shifts for employee ID = " + employee.getId());
+		
+		for (Shift shift : shifts){
 			Logger.log(shift.toString());
 		}
 	}
