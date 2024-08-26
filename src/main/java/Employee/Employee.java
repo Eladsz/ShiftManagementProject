@@ -101,15 +101,7 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		
-		return "ID = " + id + "\n"
-				+"Employee ID = " + employeeID + "\n"
-				+ "First Name = " + firstName + "\n"
-				+ "Last Name = " + lastName + "\n"
-				+ "BirthDate = " + birthDate + "\n"
-				+ "Role = " + role.getName() + "\n"
-				+ "Level = " + level.getName() + "\n"
-				+ "Username = " + username + "\n"; 
+		return "ID: " + id + ", Name: " + getFirstName() + " " + getLastName() + ", Username: " + getUsername() + ", birthdate: " + getBirthDate() + ", Role: " + getLevel().getName() + " " + getRole().getName();
 	}
 	
 

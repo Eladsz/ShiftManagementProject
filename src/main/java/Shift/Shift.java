@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import Employee.Employee;
@@ -80,13 +81,19 @@ public class Shift {
 	public List<CheckInOutRecord> getShiftCheckInOutRecords(){
 		return checkInOutRecords;
 	}
+	
+    public Optional<CheckInOutRecord> findRecordByEmployeeId(int employeeId) {
+        return checkInOutRecords.stream()
+                .filter(record -> record.employeeId() == employeeId)
+                .findFirst();
+    }
 
 	@Override
 	public String toString() {
 		return
-				  "shift id:   " + shiftID + "\n"
+				  "shift id = " + shiftID + "\n"
 				+ "shiftDate = " + shiftDate+ "\n"
 				+ "startTime = " + startTime+ "\n"
-				+ "endTime 	 = " + endTime+ "\n";
+				+ "endTime = " + endTime+ "\n\n";
 	}
 }

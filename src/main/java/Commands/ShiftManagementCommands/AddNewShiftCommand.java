@@ -14,9 +14,8 @@ public class AddNewShiftCommand implements Command {
 		LocalDate shiftDate = Input.getDate("Shift date");
 		LocalTime startTime = Input.getTime("Shift Start time");
 		LocalTime endTime 	= Input.getTime("Shift End time");
-		ShiftManager manager = new ShiftManager();
 		
-		manager.addNewShift(shiftDate, startTime, endTime);
+		ShiftManager.getInstance().addNewShift(shiftDate, startTime, endTime);
 	}
 
 }

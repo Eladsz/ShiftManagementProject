@@ -1,4 +1,4 @@
-package Commands.LoginMenuCommands;
+package Commands.EmployeeManagementCommands;
 
 import java.time.LocalDate;
 
@@ -10,7 +10,7 @@ import IO.Input;
 import Interfaces.Command;
 import Logger.Logger;
 
-public class CreateNewUserCommand implements Command {
+public class CreateNewEmployeeCommand implements Command {
 
 	@Override
 	public void execute() {

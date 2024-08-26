@@ -18,6 +18,8 @@ public class Logger{
         		"_"+LocalDateTime.now().getHour()+
         		"_"+LocalDateTime.now().getMinute()+ 
 				"_LogFile.txt"));
+		
+		Logger.log("Logger has been initialized.");
 	}
 
 	public static void addObserver(LoggerObserver observer) {

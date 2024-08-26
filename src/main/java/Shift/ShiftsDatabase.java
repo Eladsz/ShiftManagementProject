@@ -1,6 +1,8 @@
 package Shift;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +23,15 @@ public class ShiftsDatabase {
 		return _instance;
 	}
 	
+	public List<Shift> getAllShifts(){
+		return shifts;
+	}
+	
 	public boolean addShift(Shift newShift) {
+
+		if(checkShiftConflict(newShift, 0))
+			return false;
+		
 		return shifts.add(newShift);
 	}
 	
@@ -66,5 +76,35 @@ public class ShiftsDatabase {
 		}
 		return shiftsByMonth;
 	}
+	
+    public Shift getCurrentShift() {
+        LocalDateTime now = LocalDateTime.now();
+        LocalDate today = now.toLocalDate();
+        LocalTime currentTime = now.toLocalTime();
+        
+        for (Shift shift : shifts) {
+            LocalDate shiftDate = shift.getShiftDate();
+            LocalTime shiftStartTime = shift.getStartTime();
+            LocalTime shiftEndTime = shift.getEndTime();
+            
+            // Check if the shift date is today and current time is within shift hours
+            if (shiftDate.equals(today) && !currentTime.isBefore(shiftStartTime) && !currentTime.isAfter(shiftEndTime)) {
+                return shift;
+            }
+        }
+        return null; // No shift found for the current time
+    }
 
+    public boolean checkShiftConflict(Shift newShift, int skipID) {
+		for (Shift shift: shifts) {
+			if (shift.getShiftDate().equals(newShift.getShiftDate())) {
+				
+				if (newShift.getStartTime().isBefore(shift.getEndTime()) && newShift.getEndTime().isAfter(shift.getStartTime()))
+					return true;
+				}
+			}
+		
+		return false;
+    }
 }
+

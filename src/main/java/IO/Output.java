@@ -17,4 +17,5 @@ public class Output {
 			Logger.log(level.getIndex() + ". " + level.getName());
 		}
 	}
+	
 }

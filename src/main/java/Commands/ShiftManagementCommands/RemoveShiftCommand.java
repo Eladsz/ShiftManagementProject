@@ -11,8 +11,7 @@ public class RemoveShiftCommand implements Command {
 	public void execute() {
 		Logger.log("Please enter the shift ID:");
 		int shiftID = Input.getInt();
-		ShiftManager manager = new ShiftManager();
-		manager.removeShift(shiftID);
+		ShiftManager.getInstance().removeShift(shiftID);
 		
 		
 	}

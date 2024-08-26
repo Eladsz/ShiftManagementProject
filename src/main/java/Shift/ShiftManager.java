@@ -11,6 +11,19 @@ import Logger.Logger;
 
 public class ShiftManager implements ShiftManagement {
 
+	private static ShiftManager _instance;
+	
+	private ShiftManager() {
+	
+	}
+	
+	public static ShiftManager getInstance() {
+		if (_instance == null) {
+			_instance = new ShiftManager();
+		}
+		return _instance;
+	}
+	
 	@Override
 	public void addNewShift(LocalDate shiftDate, LocalTime startTime,LocalTime endTime) {
 		
@@ -19,11 +32,11 @@ public class ShiftManager implements ShiftManagement {
 			try {
 				newShift = new Shift(shiftDate, startTime, endTime);
 				if (ShiftsDatabase.getInstance().addShift(newShift)) {
-					Logger.log("Shift \n" + newShift.toString() + " has been added successfully");
+					Logger.log("Shift \n" + newShift.toString() + "has been added successfully");
 					return;
 				}
 				else {
-					Logger.error("Add Shift \n" + newShift.toString() + " - Failed");
+					Logger.error("Conflict detected with another shift. Add new shift - Failed");
 					Logger.error("Please try again");
 				}
 				
@@ -44,7 +57,7 @@ public class ShiftManager implements ShiftManagement {
 			Logger.error("Shift ID " + shiftID + " is not found");
 		else {
 			if(ShiftsDatabase.getInstance().removeShift(shift))
-				Logger.log("Remove shift " + shift.toString() + " Done sucessfully");
+				Logger.log("Remove shift " + shift.toString() + " Done successfully");
 			else
 				Logger.error("Remove shift " + shift.toString() + " Failed");
 		}

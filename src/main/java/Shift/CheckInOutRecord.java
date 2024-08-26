@@ -8,21 +8,28 @@ public record CheckInOutRecord(int employeeId, LocalDate shiftDate, LocalTime st
 
     public CheckInOutRecord {
         // Validation: Ensure endTime is after startTime
-        if (endTime.isBefore(startTime)) {
+        if (endTime != null && endTime.isBefore(startTime)) {
             throw new IllegalArgumentException("End time cannot be before start time");
         }
     }
 
-    // Method to calculate the duration of the shift
     public Duration duration() {
         return Duration.between(startTime, endTime);
     }
+    
+    public String formattedDuration() {
+        Duration duration = duration();
+        long hours = duration.toHours();
+        long minutes = duration.toMinutes() % 60;
+        long seconds = duration.getSeconds() % 60;
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+    }
 
-    // Optional: Override toString() for a custom string representation
     @Override
     public String toString() {
-        return String.format("CheckInOutRecord[employeeId=%s, shiftDate=%s, startTime=%s, endTime=%s, duration=%s]",
-                employeeId, shiftDate, startTime, endTime, duration());
+        return String.format("CheckInOutRecord: employeeId=%s, shiftDate=%s, startTime=%s, endTime=%s, duration=%s",
+                employeeId, shiftDate, startTime, endTime, formattedDuration());
     }
+    
 }
 

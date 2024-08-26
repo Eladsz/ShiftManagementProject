@@ -2,6 +2,7 @@ package AuthenticationSystem;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.w3c.dom.UserDataHandler;
@@ -11,6 +12,7 @@ import Employee.Role;
 import Employee.SenorityLevel;
 import IO.Input;
 import Interfaces.EmployeeManagement;
+import Logger.Logger;
 
 public class EmployeeDatabase implements EmployeeManagement {
     private  Map<String, Employee> employeeMap;
@@ -55,6 +57,7 @@ public class EmployeeDatabase implements EmployeeManagement {
     
     private void addAdminUser() {
     	employeeMap.put("admin", new Employee(0, "admin", "admin", LocalDate.now(), Role.ADMIN, SenorityLevel.EXPERT, "admin"));
+    	Logger.log("Admin user has been created [username: admin, password: admin]");
     }
 
 	@Override
@@ -68,6 +71,21 @@ public class EmployeeDatabase implements EmployeeManagement {
 	@Override
 	public boolean changePassword(Employee employee ,String oldPassword, String newPassword) {
 		return UsersDatabase.getInstance().setPassword(employee.getUsername(), oldPassword, newPassword);
+	}
+
+	@Override
+	public Employee findEmployee(int employeeID) {
+		for (Employee employee: employeeMap.values()) {
+			if (employee.getId() == employeeID)
+				return employee;
+		}
+		
+		return null;
+	}
+
+	@Override
+	public List<Employee> getAllEmployees() {
+		return employeeMap.values().stream().toList();
 	}
     
 }
