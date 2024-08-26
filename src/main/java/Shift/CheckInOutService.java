@@ -17,7 +17,7 @@ public class CheckInOutService implements CheckInOutManagement {
     	activeRecords = new HashMap<>();
     }
     
-    public  static CheckInOutService getInstance() {
+    public static CheckInOutService getInstance() {
     	if (_instance == null) {
     		_instance = new CheckInOutService();
     	}

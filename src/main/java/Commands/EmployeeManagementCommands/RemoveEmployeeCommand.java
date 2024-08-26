@@ -1,6 +1,7 @@
 package Commands.EmployeeManagementCommands;
 
 import AuthenticationSystem.EmployeeDatabase;
+import AuthenticationSystem.UsersDatabase;
 import Employee.Employee;
 import IO.Input;
 import Interfaces.Command;
@@ -13,7 +14,7 @@ public class RemoveEmployeeCommand implements Command {
 		int id = Input.getIDFromUser("Enter the employee ID");
 		Employee worker = EmployeeDatabase.getInstance().findEmployee(id);
 		if (worker != null) {
-			if(EmployeeDatabase.getInstance().removeEmployee(worker))
+			if(EmployeeDatabase.getInstance().removeEmployee(worker) && UsersDatabase.getInstance().removeUser(worker.getUsername()))
 				Logger.log(worker.toString() + "\nHas been removed from the database.");
 			else
 				Logger.error("Remove employee - Failed");

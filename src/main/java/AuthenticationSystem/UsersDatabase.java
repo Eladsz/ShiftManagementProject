@@ -68,6 +68,15 @@ public class UsersDatabase {
         return true; // Username successfully updated
     }
 
+	public boolean removeUser(String username) {
+		if (users.containsKey(username)) {
+			users.remove(username);
+			return true;
+		}
+			
+		return false;
+	}
+
 
     
 }

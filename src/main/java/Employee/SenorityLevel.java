@@ -8,8 +8,7 @@ public enum SenorityLevel {
 	JUNIOR  (2, "Junior"),
 	MID		(3, "Mid"),
 	SENIOR	(4, "Senior"),
-	EXPERT	(5, "Expert"),
-	MANAGER	(6, "Manager");
+	EXPERT	(5, "Expert");
 	
 	private int index;
 	private String name;
