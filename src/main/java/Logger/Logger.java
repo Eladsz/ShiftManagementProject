@@ -1,3 +1,5 @@
+//Yaniv Kaveh - Shtul : 206768004
+//Elad Sztejnworcel : 204296495
 package Logger;
 
 import java.time.LocalDateTime;
