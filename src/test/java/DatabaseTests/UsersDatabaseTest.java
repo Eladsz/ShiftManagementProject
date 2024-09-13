@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import AuthenticationSystem.UsersDatabase;
+import AuthService.UsersDatabase;
 import Logger.Logger;
 
 public class UsersDatabaseTest {

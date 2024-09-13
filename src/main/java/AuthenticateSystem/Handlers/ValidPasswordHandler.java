@@ -2,7 +2,7 @@
 //Elad Sztejnworcel : 204296495
 package AuthenticateSystem.Handlers;
 
-import AuthenticationSystem.UsersDatabase;
+import AuthService.UsersDatabase;
 import Logger.Logger;
 public class ValidPasswordHandler extends Handler {
     @Override

@@ -2,7 +2,7 @@
 //Elad Sztejnworcel : 204296495
 package Commands.ShiftManagementCommands;
 
-import AuthenticationSystem.EmployeeDatabase;
+import AuthService.EmployeeDatabase;
 import IO.Input;
 import Interfaces.Command;
 import Logger.Logger;

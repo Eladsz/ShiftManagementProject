@@ -7,7 +7,7 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import AuthenticationSystem.EmployeeDatabase;
+import AuthService.EmployeeDatabase;
 import Employee.Employee;
 import IO.Input;
 import Interfaces.ShiftManagement;

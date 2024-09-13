@@ -2,8 +2,8 @@
 //Elad Sztejnworcel : 204296495
 package Commands.LoginMenuCommands;
 
-import AuthenticationSystem.AuthService;
-import AuthenticationSystem.EmployeeDatabase;
+import AuthService.AuthService;
+import AuthService.EmployeeDatabase;
 import Employee.Employee;
 import IO.Input;
 import Interfaces.Command;

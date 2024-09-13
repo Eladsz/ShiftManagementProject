@@ -2,8 +2,8 @@
 //Elad Sztejnworcel : 204296495
 package Commands.EmployeeManagementCommands;
 
-import AuthenticationSystem.EmployeeDatabase;
-import AuthenticationSystem.UsersDatabase;
+import AuthService.EmployeeDatabase;
+import AuthService.UsersDatabase;
 import Employee.Employee;
 import IO.Input;
 import Interfaces.Command;

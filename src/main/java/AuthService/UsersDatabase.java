@@ -1,6 +1,6 @@
 //Yaniv Kaveh - Shtul : 206768004
 //Elad Sztejnworcel : 204296495
-package AuthenticationSystem;
+package AuthService;
 
 import java.util.HashMap;
 import java.util.Map;
